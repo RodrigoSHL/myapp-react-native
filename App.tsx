@@ -1,19 +1,10 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import React from 'react';
+import {CounterScreen} from './src/screen/CounterScreen';
+import {HiScreen} from './src/screen/HiScreen';
 
 export const App = () => {
   return (
-    <View style={{
-      flex:1,
-      backgroundColor: '#2FE3A6',
-      justifyContent:'center',
-    }}>
-      <Text style={{
-        fontSize:50,
-        textAlign:'center'
-      }}>
-        Mi first App
-      </Text>
-    </View>
-  )
-}
+    // <HiScreen/>
+    <CounterScreen />
+  );
+};
