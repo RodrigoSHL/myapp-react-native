@@ -1,34 +1,31 @@
 import React, {useState} from 'react';
-import {Button, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
+import {Fab} from '../components/Fab';
 
 export const CounterScreen = () => {
   const [counter, setCounter] = useState<number>(0);
 
-  const onPressLearnMore = () => {
-    setCounter(prev => prev + 1)
-  }
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: '#2FE3A6',
-        justifyContent: 'center',
-      }}>
-      <Text
-        style={{
-          fontSize: 50,
-          textAlign: 'center',
-          top: -10,
-        }}>
-        Counter: {counter}
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Counter: {counter}</Text>
 
-      <Button
-        onPress={onPressLearnMore}
-        title="+"
-        color="black"
-        accessibilityLabel="Learn more about this purple button"
-      />
+      <Fab title="+1" onPress={() => setCounter(counter + 1)} />
+
+      <Fab position='bl' title="-1" onPress={() => setCounter(counter - 1)} />
+
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#2FE3A6',
+    justifyContent: 'center',
+  },
+  title: {
+    fontSize: 50,
+    textAlign: 'center',
+    top: -10,
+  },
+});
