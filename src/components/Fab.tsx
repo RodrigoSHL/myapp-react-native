@@ -18,7 +18,7 @@ export const Fab = ({title, position = 'br', onPress}: Props) => {
   const ios = () => {
     return (
       <TouchableOpacity
-        activeOpacity={0.5}
+        activeOpacity={0.8}
         style={[
           styles.fabLocation,
           position === 'bl' ? styles.left : styles.right,
